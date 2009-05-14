@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+gem 'soap4r'
+require 'lib/jajah-reseller'
+
+jajah = JajahReseller::CallServiceSoap.new
+callDetails = JajahReseller::InitCall1.new(payingUserName, payingPassword, fromNumber, toNumbers,'BothNumbersAreVisible')
+result = jajah.initCall1(callDetails)
+
+puts result.inspect
